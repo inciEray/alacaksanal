@@ -1,12 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import PageContent from "./layout/PageContent";
-import Header from "./components/Header";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PageContent />} />
+        <Route path="/" element={<HomePage />} />
         {/* Diğer route'larınızı buraya ekleyebilirsiniz */}
       </Routes>
     </Router>

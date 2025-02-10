@@ -16,17 +16,16 @@ import {
   } from "lucide-react";
   
   import { Link } from "react-router-dom";
-  import NavbarLayout from "../layout/NavbarLayout";
   import { useState } from "react";
   
   export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
   
     return (
-      <NavbarLayout>
+      <header>
         {/* Üst Bilgi Barı */}
-        <div className="bg-[#252B42] text-white flex justify-around items-center h-[58px]">
-          <div className="flex items-center">
+        <div className="bg-[#252B42] text-white flex flex-col md:flex-row justify-around items-center h-auto md:h-[58px] py-2 md:py-0">
+          <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
             <div className="flex items-center">
               <span className="m-2">
                 <Phone size={16} />
@@ -40,11 +39,11 @@ import {
               <span className="font-bold text-[14px]">alacaksanal@gmail.com</span>
             </div>
           </div>
-  
-          <div className="font-bold text-[14px]">
+
+          <div className="font-bold text-[14px] text-center my-2 md:my-0">
             <h6>Follow Us and get a chance to win 80% off</h6>
           </div>
-  
+
           <div className="flex items-center gap-3">
             <h6 className="font-bold text-[14px]">Follow Us :</h6>
             <Link to="/" className="text-white hover:text-gray-400">
@@ -61,14 +60,14 @@ import {
             </Link>
           </div>
         </div>
-  
+
         {/* Ana Menü */}
-        <div className="bg-white flex justify-around items-center h-[78px]">
-          <div className="text-2xl font-bold">
+        <div className="bg-white flex flex-col md:flex-row justify-around items-center h-auto md:h-[78px] py-4 md:py-0">
+          <div className="text-2xl font-bold mb-4 md:mb-0">
             <h3>AlacaksanAL</h3>
           </div>
-  
-          <nav className="text-[#737373] flex space-x-6 font-semibold">
+
+          <nav className="text-[#737373] flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 font-semibold text-center">
             <Link to="/" className="hover:text-black transition">
               Home
             </Link>
@@ -81,9 +80,8 @@ import {
                   Shop
                   <ChevronDown className=" size-5 text-[#737373]" />
                 </span>
-                
               </button>
-  
+
               {isOpen && (
                 <div
                   className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-lg z-50"
@@ -130,7 +128,7 @@ import {
                           </li>
                         </ul>
                       </div>
-  
+
                       <div className="w-1/2 flex flex-col gap-4">
                         <h4 className="font-bold text-black mb-2">Erkek</h4>
                         <ul className="space-y-1 flex flex-col gap-3">
@@ -173,7 +171,7 @@ import {
                 </div>
               )}
             </div>
-  
+
             <Link to="/about" className="hover:text-black transition">
               About
             </Link>
@@ -187,8 +185,8 @@ import {
               Pages
             </Link>
           </nav>
-  
-          <div className="flex items-center space-x-4">
+
+          <div className="flex items-center space-x-4 mt-4 md:mt-0">
             <div className="flex items-center space-x-1 text-[#23A6F0]">
               <FontAwesomeIcon icon={faUser} className="text-[12px]" />
               <Link to="/" className="font-bold text-[14px]">
@@ -212,6 +210,8 @@ import {
             </div>
           </div>
         </div>
-      </NavbarLayout>
+      </header>
+      
+
     );
   }
