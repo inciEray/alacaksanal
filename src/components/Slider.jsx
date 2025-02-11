@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Slider({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideCount = slides.length;
+  const navigate = useNavigate(); // Sayfa yönlendirme fonksiyonu , aşağıda tıklanabilir butona koydum.
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slideCount);
-    }, 5000);
+    }, 10000); // Burada 10 saniyede bir kaymasını sağlıyoruz otomatik olarak.
 
     return () => clearInterval(interval);
   }, [slideCount]);
@@ -46,10 +48,10 @@ export default function Slider({ slides }) {
                     {slide.description}
                   </p>
                   <div className="md:flex gap-3">
-                    <p className="text-2xl sm:text-4xl font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
-                      {slide.price}
-                    </p>
-                    <button className="px-5 py-2 font-bold bg-green-500 text-white rounded-md shadow-lg hover:bg-green-600 transition">
+                  <button
+                      onClick={() => navigate("/shop")} // Yönlendirme için koydum.
+                      className="px-5 py-2 font-bold bg-green-500 text-white rounded-md shadow-lg hover:bg-green-600 transition"
+                    >
                       {slide.buttonText}
                     </button>
                   </div>
@@ -60,29 +62,31 @@ export default function Slider({ slides }) {
         </div>
       </div>
 
+      {/* Önceki ve Sonraki butonlarım */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-5 transform -translate-y-1/2 bg-black bg-opacity-20 text-white md:text-[30px] p-2 rounded-full hover:bg-opacity-50 transition"
+        className="absolute top-1/2 left-5 transform -translate-y-1/2  bg-opacity-20 text-white md:text-[50px] p-2 rounded-full hover:bg-opacity-50 transition"
         aria-label="Previous Slide"
       >
         &#10094;
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-5 transform -translate-y-1/2 bg-black bg-opacity-20 text-white md:text-[30px] p-2 rounded-full hover:bg-opacity-50 transition"
+        className="absolute top-1/2 right-5 transform -translate-y-1/2  bg-opacity-20 text-white md:text-[50px] p-2 rounded-full hover:bg-opacity-50 transition"
         aria-label="Next Slide"
       >
         &#10095;
       </button>
 
-      <div className="absolute bottom-5 w-full flex justify-center gap-2">
+      {/* Alttaki indikatör sayacım */}
+      <div className="absolute bottom-5 w-full flex justify-center gap-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
               currentSlide === index
-                ? "bg-white"
-                : "bg-white bg-opacity-50 hover:bg-opacity-75"
+                ? "bg-white scale-125" // Aktif indikatör daha büyük ve beyaz
+                : "bg-white bg-opacity-50 hover:bg-opacity-75" // Pasif indikatör daha küçük ve opak
             }`}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
