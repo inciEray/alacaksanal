@@ -74,7 +74,106 @@ export default function Header() {
         </div>
         <nav className="text-[#737373] flex space-x-6 font-semibold">
           <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
-          <Link to="/shop" className="hover:text-black transition">Mağaza</Link>
+          <div className="relative">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex items-center text-gray-700 hover:text-black focus:outline-none transition"
+              >
+                <span className="text-[#737373] items-center flex font-semibold hover:text-black cursor-pointer">
+                  Mağaza
+                  <ChevronDown className=" size-5 text-[#737373]" />
+                </span>
+              </button>
+
+              {isOpen && (
+                <div
+                  className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 shadow-lg rounded-lg z-50"
+                  onMouseLeave={() => setIsOpen(false)}
+                >
+                  <div className="flex flex-col p-4 gap-6">
+                    {/* Kadın ve Erkek Kategorilerini Flexbox ile Yan Yana Yapıyoruz */}
+                    <div className="flex justify-between gap-10">
+                      {/* Kadın Kategorisi */}
+                      <div className="w-1/2 pr-4 flex flex-col gap-4">
+                        <h4 className="font-bold text-black mb-2">Kadın</h4>
+                        <ul className="space-y-1 flex flex-col gap-3">
+                          <li>
+                            <Link
+                              to="/shop/women/bags"
+                              className="hover:text-black text-[#737373] font-semibold"
+                            >
+                              Çantalar
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/women/belts"
+                              className="hover:text-black"
+                            >
+                              Kemerler
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/women/cosmetics"
+                              className="hover:text-black"
+                            >
+                              Kozmetik
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/women/hats"
+                              className="hover:text-black"
+                            >
+                              Şapkalar
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="w-1/2 flex flex-col gap-4">
+                        <h4 className="font-bold text-black mb-2">Erkek</h4>
+                        <ul className="space-y-1 flex flex-col gap-3">
+                          <li>
+                            <Link
+                              to="/shop/men/bags"
+                              className="hover:text-black"
+                            >
+                              Çantalar
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/men/belts"
+                              className="hover:text-black"
+                            >
+                              Kemerler
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/men/cosmetics"
+                              className="hover:text-black"
+                            >
+                              Kozmetik
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to="/shop/men/hats"
+                              className="hover:text-black"
+                            >
+                              Şapkalar
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           <Link to="/about" className="hover:text-black transition">Hakkımızda</Link>
           <Link to="/blog" className="hover:text-black transition">Blog</Link>
           <Link to="/contact" className="hover:text-black transition">İletişim</Link>
