@@ -70,7 +70,7 @@ export default function Header() {
       {/* Desktopta görünen üst beyaz navbar*/}
       <div className="bg-white hidden md:flex flex-row justify-around items-center h-[78px]">
         <div className="text-2xl font-bold">
-          <h3>AlacaksanAL</h3>
+        <Link to="/" className="hover:text-black transition">AlacaksanAL</Link>
         </div>
         <nav className="text-[#737373] flex space-x-6 font-semibold">
           <Link to="/" className="hover:text-black transition">Ana Sayfa</Link>
@@ -80,7 +80,7 @@ export default function Header() {
                 className="flex items-center text-gray-700 hover:text-black focus:outline-none transition"
               >
                 <span className="text-[#737373] items-center flex font-semibold hover:text-black cursor-pointer">
-                  Mağaza
+                <Link to="/shop" className="hover:text-black transition">Mağaza</Link>
                   <ChevronDown className=" size-5 text-[#737373]" />
                 </span>
               </button>

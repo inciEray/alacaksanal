@@ -37,63 +37,63 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-0 my-[50px]">
             {/* Company Info */}
             <div className="flex flex-col gap-5">
-              <h5 className="font-bold text-[#252B42]">Company Info</h5>
+              <h5 className="font-bold text-[#252B42]">Şirket Bilgileri</h5>
               <div className="flex flex-col gap-2 text-[#737373] font-bold">
-                <Link to="/about">About Us</Link>
-                <Link to="/carrier">Carrier</Link>
-                <Link to="/hiring">We are hiring</Link>
+                <Link to="/about">Hakkımızda</Link>
+                <Link to="/carrier">Kariyer</Link>
+                <Link to="/hiring">İşe alım yapıyoruz</Link>
                 <Link to="/blog">Blog</Link>
               </div>
             </div>
 
             {/* Legal */}
             <div className="flex flex-col gap-5">
-              <h5 className="font-bold text-[#252B42]">Legal</h5>
+              <h5 className="font-bold text-[#252B42]">Yasal</h5>
               <div className="flex flex-col gap-2 text-[#737373] font-bold">
-                <Link to="/about">About Us</Link>
-                <Link to="/carrier">Carrier</Link>
-                <Link to="/hiring">We are hiring</Link>
+                <Link to="/about">Hakkımızda</Link>
+                <Link to="/carrier">Kariyer</Link>
+                <Link to="/hiring">İşe alım yapıyoruz</Link>
                 <Link to="/blog">Blog</Link>
               </div>
             </div>
 
             {/* Features */}
             <div className="flex flex-col gap-5">
-              <h5 className="font-bold text-[#252B42]">Features</h5>
+              <h5 className="font-bold text-[#252B42]">Özellikler</h5>
               <div className="flex flex-col gap-2 text-[#737373] font-bold">
-                <Link to="/business-marketing">Business Marketing</Link>
-                <Link to="/user-analytic">User Analytic</Link>
-                <Link to="/live-chat">Live Chat</Link>
-                <Link to="/unlimited-support">Unlimited Support</Link>
+                <Link to="/business-marketing">Ticari Pazarlama</Link>
+                <Link to="/user-analytic">Kullanıcı Analitiği</Link>
+                <Link to="/live-chat">Canlı Sohbet</Link>
+                <Link to="/unlimited-support">Sınırsız Destek</Link>
               </div>
             </div>
 
             {/* Resources */}
             <div className="flex flex-col gap-5">
-              <h5 className="font-bold text-[#252B42]">Resources</h5>
+              <h5 className="font-bold text-[#252B42]">Kaynaklar</h5>
               <div className="flex flex-col gap-2 text-[#737373] font-bold">
                 <Link to="/ios-android">IOS & Android</Link>
-                <Link to="/watch-demo">Watch Demo</Link>
-                <Link to="/customers">Customers</Link>
+                <Link to="/watch-demo">Demoyu İzleyin</Link>
+                <Link to="/customers">Müşteriler</Link>
                 <Link to="/api">API</Link>
               </div>
             </div>
 
             {/* Get In Touch */}
             <div className="flex flex-col gap-5">
-              <h5 className="font-bold text-[#252B42]">Get In Touch</h5>
+              <h5 className="font-bold text-[#252B42]">İletişime Geçin</h5>
               <div>
                 <div className="h-[58px] w-full md:w-[321px] border-2 border-[#E6E6E6] flex justify-between rounded-md mb-2.5">
                   <input
                     className="flex p-[15px] text-[14px] placeholder:text-[#737373] w-full"
                     type="text"
-                    placeholder="Your Email"
+                    placeholder="Mail Adresiniz"
                   />
                   <button className="w-[117px] bg-[#23A6F0] rounded-r-md text-[14px] text-[#FFFFFF]">
-                    Subscribe
+                    Kaydol
                   </button>
                 </div>
-                <p className="text-[#737373]">Lore imp sum dolor amit.</p>
+                <p className="text-[#737373]">AlacaksanAL</p>
               </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ const Footer = () => {
       <div className="flex justify-center items-center bg-[#FAFAFA] h-auto md:h-[74px] py-4 md:py-0">
         <div className="container mx-4 md:mx-[48px] my-[50px] w-full md:w-[1050px]">
           <div className="flex justify-center md:justify-between w-full md:w-[600px] h-auto md:h-[24px] text-[#737373] font-bold">
-            <h6>Made With Love By AlacaksanAL All Right Reserved</h6>
+            <h6>Made With Love by “AlacaksanAL” Tüm Hakları Saklıdır</h6>
           </div>
         </div>
       </div>
