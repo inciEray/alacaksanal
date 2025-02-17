@@ -184,7 +184,7 @@ export default function Header() {
             <FontAwesomeIcon icon={faUser} className="text-[12px]" />
             <Link to="/" className="font-bold text-[14px]">Giriş Yap</Link>
             <span className="font-bold text-[14px]">/</span>
-            <Link to="/" className="font-bold text-[14px]">Kayıt Ol</Link>
+            <Link to="/signup" className="font-bold text-[14px]">Kayıt Ol</Link>
           </div>
           <div className="flex items-center space-x-3 text-[#23A6F0]">
             <Search size={16} className="cursor-pointer" />
