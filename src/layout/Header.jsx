@@ -19,10 +19,12 @@ import {
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
+import {logoutUser} from "../actions/clientActions";
 import md5 from "md5"; // Gravatar için email hashleme
 
 export default function Header() {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -97,6 +99,12 @@ export default function Header() {
               <span className="text-[#23A6F0] font-bold text-[14px]">
                 {user.name || "Misafir"}
               </span>
+              <button
+                onClick={() => dispatch(logoutUser())}
+                className="px-3 py-1 rounded text-red-500 text-sm hover:bg-red-600 hover:text-white"
+              >
+                Çıkış Yap
+              </button>
             </div>
           ) : (
             <div className="flex items-center space-x-1 text-[#23A6F0]">
@@ -121,7 +129,15 @@ export default function Header() {
         </div>
         <div className="flex items-center space-x-4">
           {isAuthenticated ? (
+            <>
             <img src={gravatarUrl} alt="User Avatar" className="w-8 h-8 rounded-full" />
+            <button
+                onClick={() => dispatch(logoutUser())}
+                className="text-red-500 text-sm hover:text-red-600"
+              >
+                Çıkış Yap
+              </button>
+            </>
           ) : (
             <Link to="/auth">
               <User />

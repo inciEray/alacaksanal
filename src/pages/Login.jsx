@@ -18,7 +18,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       await dispatch(loginUser(data, true));
-      navigate(-1);
+      navigate(-1); // Kullanıcı girişinden sonra bunu kaldır önceki sayfaya atmasın!!!
     } catch (err) {
       setError("Login failed! Incorrect email or password.");
     }
